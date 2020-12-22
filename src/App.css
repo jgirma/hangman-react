@@ -73,8 +73,8 @@ h1 {
   width: 20px;
 }
 
-.popup-container {
-  background-color: rgba(0, 0, 0, 0.3);
+.popup-container, .category-popup {
+  background-color: rgba(0, 0, 0, 0.4);
   position: fixed;
   top: 0;
   bottom: 0;
@@ -86,7 +86,8 @@ h1 {
   justify-content: center;
 }
 
-.popup {
+
+.popup, .c-popup {
   background: #393e46;
   border-radius: 5px;
   box-shadow: 0 15px 10px 3px rgba(0, 0, 0, 0.1);
@@ -94,7 +95,7 @@ h1 {
   text-align: center;
 }
 
-.popup button {
+.popup button, .c-popup button {
   cursor: pointer;
   background-color: #eeeeee;
   color: #393e46;
@@ -104,11 +105,11 @@ h1 {
   font-size: 16px;
 }
 
-.popup button:active {
+.popup button:active, .c-popup button:active {
   transform: scale(0.98);
 }
 
-.popup button:focus {
+.popup button:focus, .c-popup button:focus {
   outline: 0;
 }
 

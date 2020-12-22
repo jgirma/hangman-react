@@ -1,31 +1,20 @@
-import React, {useEffect} from "react"
-import {checkWin} from "../helpers/helpers"
+import React from "react"
+import '../App.css'
+const initialMessage = "Choose a Category";
 
-const CategoryPopup = ({correctLetters, wrongLetters, selectedWord, setPlayable, playAgain}) => {
-  let finalMessage = "";
-  let finalMessageRevealWord = "";
-  let playable = true;
 
-  if (checkWin(correctLetters, wrongLetters, selectedWord) === "win"){
-    finalMessage="Congrats you Win!!";
-    finalMessageRevealWord = selectedWord;
-    playable = false;
-  } else if (checkWin(correctLetters, wrongLetters, selectedWord) === "loss"){
-    finalMessage = "Sorry Sir/Ma'am but you lost this time.";
-    finalMessageRevealWord = `...... the word was ${selectedWord}`;
-    playable = false;
-  }
-
-  useEffect(() => setPlayable(playable));
+const CategoryPopup = ({setIndex, selectedWord}) => {
   return(
-    <div className="popup-container" style={finalMessage !== '' ? {display: 'flex'} : {}}>
-     <div className="popup">
-       <h2>{finalMessage}</h2>
-       <h3>{finalMessageRevealWord}</h3>
-       <button onClick={playAgain}>Play Again</button>
+    <div className="category-popup" style={selectedWord === ' ' ? {display: 'flex'} : {}}>
+     <div className="c-popup">
+       <h2>{initialMessage}</h2>
+       <button onClick={() => setIndex(0)}>Sports Teams</button>
+       <button onClick={() => setIndex(1)}>Programming Languages</button>
      </div>
    </div>
   )
 }
 
+
 export default CategoryPopup
+export var selectedWord

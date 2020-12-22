@@ -21,3 +21,13 @@ export function checkWin(correct, wrong, word) {
   }
   return status;
 }
+
+export function beginWithWord(index, arrayOne, arrayTwo){
+  let word = "";
+  if(index === 0){
+    word = arrayOne[Math.floor(Math.random() * arrayOne.length)];
+  } else {
+    word = arrayTwo[Math.floor(Math.random() * arrayTwo.length)];
+  }
+  return word;
+}
